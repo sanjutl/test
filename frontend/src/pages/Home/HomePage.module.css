@@ -1,0 +1,79 @@
+.homePage {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.main {
+  width: min(1400px, 92%);
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.breadcrumb span:last-child {
+  font-size: 25px;
+}
+
+.actionButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.actionButtons button {
+  min-width: 145px;
+  height: 52px;
+  padding: 0 24px;
+  border: none;
+  border-radius: 18px;
+  background: #f5a000;
+  color: #ffffff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+}
+
+.productSection {
+  flex: 1;
+  min-width: 0;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 1000px) {
+  .productGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .actionButtons {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .productGrid {
+    grid-template-columns: 1fr;
+  }
+}

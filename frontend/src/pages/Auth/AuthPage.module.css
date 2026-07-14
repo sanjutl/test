@@ -1,0 +1,270 @@
+.authPage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f6f6f6;
+  padding: 24px;
+}
+
+.authContainer {
+  position: relative;
+  width: min(900px, 100%);
+  min-height: 550px;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12),
+    0 10px 10px rgba(0, 0, 0, 0.08);
+}
+
+.signInContainer,
+.signUpContainer {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  min-height: 550px;
+  padding: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  transition: all 0.6s ease-in-out;
+  text-align: center;
+}
+
+.signInContainer {
+  left: 0;
+  z-index: 2;
+}
+
+.signUpContainer {
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+}
+
+.signUpMode .signInContainer {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.signUpMode .signUpContainer {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+}
+
+.signInMode .signInContainer {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.signInMode .signUpContainer {
+  transform: translateX(0);
+  opacity: 0;
+}
+
+.signInContainer h1,
+.signUpContainer h1 {
+  color: #EDA415;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.titleLine {
+  width: 50px;
+  height: 3px;
+  background: #07516f;
+  margin-bottom: 30px;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form input {
+  width: 100%;
+  height: 48px;
+  border: none;
+  outline: none;
+  background: #eeeeee;
+  padding: 0 18px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.form input:focus {
+  box-shadow: 0 0 0 2px rgba(7, 81, 111, 0.18);
+}
+
+.forgotButton {
+  border: none;
+  background: transparent;
+  color: #444444;
+  margin: 8px 0 22px;
+  cursor: pointer;
+}
+
+.primaryButton,
+.outlineButton {
+  min-width: 145px;
+  height: 44px;
+  border-radius: 24px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.primaryButton {
+  border: none;
+  background: #EDA415;
+  color: #ffffff;
+}
+
+.primaryButton:hover,
+.outlineButton:hover {
+  transform: scale(1.04);
+}
+
+.overlayContainer {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 10;
+  transition: transform 0.6s ease-in-out;
+}
+
+.signUpMode .overlayContainer {
+  transform: translateX(-100%);
+}
+
+.signInMode .overlayContainer {
+  transform: translateX(0);
+}
+
+.overlay {
+  position: relative;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: #07516f;
+  color: #ffffff;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.signUpMode .overlay {
+  transform: translateX(50%);
+}
+
+.signInMode .overlay {
+  transform: translateX(0);
+}
+
+.overlayPanel {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.overlayPanel h1 {
+  font-size: 34px;
+  margin-bottom: 24px;
+}
+
+.overlayPanel p {
+  max-width: 290px;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.overlayLeft {
+  left: 0;
+}
+
+.overlayRight {
+  right: 0;
+}
+
+.outlineButton {
+  border: 1px solid #ffffff;
+  background: transparent;
+  color: #ffffff;
+}
+
+/* Decorative circles similar to the Figma design */
+
+.overlay::before,
+.overlay::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.overlay::before {
+  width: 280px;
+  height: 280px;
+  left: -100px;
+  bottom: -120px;
+}
+
+.overlay::after {
+  width: 220px;
+  height: 220px;
+  right: -70px;
+  top: -100px;
+}
+
+@media (max-width: 700px) {
+  .authPage {
+    padding: 16px;
+  }
+
+  .authContainer {
+    min-height: 620px;
+  }
+
+  .signInContainer,
+  .signUpContainer {
+    width: 100%;
+    padding: 40px 28px;
+  }
+
+  .overlayContainer {
+    display: none;
+  }
+
+  .signUpMode .signUpContainer {
+    transform: translateX(0);
+  }
+
+  .signUpMode .signInContainer {
+    transform: translateX(0);
+  }
+
+  .signInContainer h1,
+  .signUpContainer h1 {
+    font-size: 27px;
+  }
+}
