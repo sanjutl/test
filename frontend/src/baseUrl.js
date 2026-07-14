@@ -1,3 +1,3 @@
-const baseUrl="http://localhost:8000"
+const baseUrl="https://e-com-machine-test.onrender.com"
 
 export default baseUrl
