@@ -6,7 +6,7 @@ Create a `.env` file inside the backend directory.
 
 ```env
 PORT=8000
-MONGO_URI=mongodb+srv://sanjunairtl_db_user:DKtwqGEVlc452rIJ@cluster0.mrjc5x9.mongodb.net/?appName=Cluster0
+MONGO_URL=mongodb+srv://sanjunairtl_db_user:DKtwqGEVlc452rIJ@cluster0.mrjc5x9.mongodb.net/?appName=Cluster0
 JWT_SECRET=sdfh2j3k4h234h3j2ksdfjsh23423423jhfsfdab34
 ```
 
